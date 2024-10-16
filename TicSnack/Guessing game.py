@@ -5,6 +5,11 @@ d=randint(1,5)
 if (c==d):
     print("You're winner!! Chicken dinner")
 else:
-    print("You lose the number is:",d)
+    print("You lose\nThe number is:",d)
+
+
+
+
+
 
 
