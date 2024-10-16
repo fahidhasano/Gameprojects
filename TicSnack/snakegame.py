@@ -1,9 +1,10 @@
+#python
 from tkinter import *
 import random
 
-GAME_WIDTH=500
-GAME_HEIGHT=500
-SPEED=500
+GAME_WIDTH=700
+GAME_HEIGHT=700
+SPEED=50
 SPACE_SIZE=50
 BODY_PARTS=3
 SNAKE_COLOR="red"
@@ -102,7 +103,7 @@ def game_over():
 
 window=Tk()
 window.title("Snake game")
-window.resizable(False,False)
+window.resizable(True,True)
 score=0
 direction= 'down'
 label=Label(window,text="🐍 game by Rafid\nScore:{}".format(score),font=('consolas',20))
@@ -115,7 +116,7 @@ window_height=window.winfo_height()
 screen_width= window.winfo_screenwidth()
 screen_height= window.winfo_screenheight()
 x=int((screen_width/2)-(window_width/2))
-y=int((screen_width/2)-(window_width/2))
+y=int((screen_height/2)-(window_height/2))
 window.geometry(f"{window_width}x{window_height}+{x}+{y}")
 window.bind('<Left>',lambda event: change_direction('left'))
 window.bind('<Right>',lambda event: change_direction('right'))
