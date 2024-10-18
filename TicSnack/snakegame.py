@@ -4,11 +4,11 @@ import random
 
 GAME_WIDTH=700
 GAME_HEIGHT=700
-SPEED=50
+SPEED=500
 SPACE_SIZE=50
 BODY_PARTS=3
-SNAKE_COLOR="red"
-FOOD_COLOR="green"
+SNAKE_COLOR="#f70707"
+FOOD_COLOR="#0bf707"
 BACKGROUND_COLOR="#000000"
 
 
@@ -52,7 +52,7 @@ def next_turn(snake,food):
     if x== food.coordinates[0] and y==food.coordinates[1]:
         global score
         score+=1
-        label.config(text="Score:{}".format(score))
+        label.config(text="You're doing great!\nScore:{}".format(score))
         canvas.delete("food")
         food=Food()
     else:
@@ -102,8 +102,10 @@ def game_over():
     canvas.create_text(canvas.winfo_width()/2,canvas.winfo_height()/2,font= ('consolas',20),text="      🐍🐍Game over😁😁 \nCreated by: Rafid Ahmed\nCredit: BroCode Youtube Channel",fill="red",tag="gameover")
 
 window=Tk()
-window.title("Snake game")
+window.title("Snake game by Rafid Ahmed")
 window.resizable(True,True)
+headpic= PhotoImage(file='snake.png')
+window.iconphoto(True,headpic)
 score=0
 direction= 'down'
 label=Label(window,text="🐍 game by Rafid\nScore:{}".format(score),font=('consolas',20))
